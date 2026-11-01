@@ -1,0 +1,31 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Vertriebsmitarbeitende" as Sales
+actor "Vertriebsleitung" as Lead
+actor "CRM-Administration" as Admin
+
+rectangle "CRM-System" {
+usecase "UC-01\nKundendatensatz anlegen" as UC01
+usecase "UC-02\nKundendaten bearbeiten" as UC02
+usecase "UC-03\nKundeninformationen suchen" as UC03
+usecase "UC-04\nKundenkontakt dokumentieren" as UC04
+usecase "UC-05\nVertriebschance verwalten" as UC05
+usecase "UC-06\nStatus aktualisieren" as UC06
+usecase "UC-07\nVertriebschancenübersicht einsehen" as UC07
+usecase "UC-08\nBenutzerberechtigungen verwalten" as UC08
+}
+
+Sales -- UC01
+Sales -- UC02
+Sales -- UC03
+Sales -- UC04
+Sales -- UC05
+Sales -- UC06
+
+Lead -- UC07
+
+Admin -- UC08
+
+@enduml
